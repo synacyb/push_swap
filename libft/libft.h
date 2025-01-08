@@ -41,9 +41,11 @@ char	*ft_strjoin(char const *s1, char const *s2);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 int     ft_min_value(t_list *list);
 char	*ft_join_args(char **argv);
-int     ft_lstsize(t_list *lst);
+int	    ft_lstsize(t_list *lst);
 void    ft_sort_list(t_list **list);
 void    ft_sort_2nbr(t_list **list);
 int     ft_find_position(int target, t_list *lst);
 void    ft_find_min_push_b(t_list **stack_a, t_list **stack_b);
+void    ft_full_sort(t_list **stack_a, t_list **stack_b);
+
 #endif

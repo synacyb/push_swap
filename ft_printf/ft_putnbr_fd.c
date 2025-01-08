@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:39:32 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/08 21:08:00 by ayadouay         ###   ########.fr       */
+/*   Created: 2024/11/08 09:58:43 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/28 09:53:41 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_putnbr_fd(int n, int fd, int len)
 {
-	size_t	i;
+	long	num;
+	char	arr[10];
+	int		i;
 
+	num = n;
 	i = 0;
-	while (lst != NULL)
+	if (num < 0)
 	{
-		i++;
-		lst = lst->next;
+		len += ft_putchar_fd('-', fd);
+		num = -num;
 	}
-	return (i);
+	else if (num == 0)
+		len += ft_putchar_fd('0', fd);
+	while (num > 0)
+	{
+		arr[i++] = (num % 10) + '0';
+		num = num / 10;
+	}
+	i = i - 1;
+	while (i >= 0)
+		len += ft_putchar_fd(arr[i--], fd);
+	return (len);
 }
