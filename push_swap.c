@@ -70,11 +70,7 @@ int main(int arc, char **argv)
 		 	i++;
 		}
 		ft_full_sort(&stack_a, &stack_b);
-		ft_printf("-----stack_a----\n");
-		// ft_swap_a(stack_a);
 		ft_print_list(stack_a);
-		ft_free_stack(&stack_a);
-
 		i = i - 1;
 		while (i >= 0)
 		{

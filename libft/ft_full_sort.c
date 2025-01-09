@@ -78,8 +78,10 @@ void    ft_sort(t_list **stack_a, t_list **stack_b)
     int len = ft_lstsize(*stack_a);
 
     str = ft_insertion_sort(str, len);
+    t_list  *cup;
     while (*stack_a)
     {
+        cup = *stack_a;
         if (r + i >= len)
             r = len - i - 1; 
         if ((*stack_a)->content >= str[i] && (*stack_a)->content <= str[r + i])
@@ -96,17 +98,17 @@ void    ft_sort(t_list **stack_a, t_list **stack_b)
         }
         else
         {
-            while (*stack_a)
+            while ((cup))
             {
-                if ((*stack_a)->content > (*stack_a)->next->content)
+                if ((cup)->next && (cup)->content > (cup)->next->content)
                     j++;
-                i++;
-                *stack_a = (*stack_a)->next;
+                cup = (cup)->next;
             }
-            if (j == ft_lstsize(*stack_a))
-                ft_rotate_a(stack_a);
-            else
+            if (j == ft_lstsize(cup))
                 ft_reverse_rotate_a(stack_a);
+            else
+                ft_rotate_a(stack_a);
+                
         }
     }
 }
@@ -152,7 +154,9 @@ void    ft_full_sort(t_list **stack_a, t_list **stack_b)
 {
     int num_node;
     num_node = ft_lstsize(*stack_a);
-    if(num_node == 2)
+    if (num_node == 1)
+        return ;
+    else if(num_node == 2)
 		ft_sort_2nbr(stack_a);
 	else if (num_node == 3)
 		ft_sort_list(stack_a);
