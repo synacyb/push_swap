@@ -83,7 +83,7 @@ void    ft_sort(t_list **stack_a, t_list **stack_b)
     {
         cup = *stack_a;
         if (r + i >= len)
-            r = len - i - 1; 
+            r = len - i - 1;
         if ((*stack_a)->content >= str[i] && (*stack_a)->content <= str[r + i])
         {
             ft_push_b(stack_a, stack_b);
@@ -98,17 +98,19 @@ void    ft_sort(t_list **stack_a, t_list **stack_b)
         }
         else
         {
+            j = 0;
             while ((cup))
             {
                 if ((cup)->next && (cup)->content > (cup)->next->content)
                     j++;
+                if ((cup)->next == NULL)
+                    j++;
                 cup = (cup)->next;
             }
-            if (j == ft_lstsize(cup))
+            if (j == ft_lstsize(*stack_a))
                 ft_reverse_rotate_a(stack_a);
             else
                 ft_rotate_a(stack_a);
-                
         }
     }
 }
@@ -186,5 +188,4 @@ void    ft_full_sort(t_list **stack_a, t_list **stack_b)
             ft_last_sort(stack_a, stack_b);
         }
     }
-       
 }
