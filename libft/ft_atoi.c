@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:30:45 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/04 15:46:56 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:19:39 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ long	ft_atoi(const char *nptr)
 	while (*nptr != '\0' && (*nptr >= '0' && *nptr <= '9'))
 	{
 		r = r * 10 + (*nptr - 48);
-		// if (r < 0)
-		// 	return (-signe * (signe == 1));
+		if ((r * signe) > 2147483647 || (r * signe) < -2147483648)
+		{
+			r = 2147483649;
+			return r;
+		}
 		nptr++;
 	}
 	r = r * signe;

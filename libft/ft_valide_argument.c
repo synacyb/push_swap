@@ -2,7 +2,7 @@
 
 int ft_valid_arguments(char *nptr)
 {
-    if (ft_atoi(nptr) > 2147483647 || ft_atoi(nptr) < -2147483648)
+    if (ft_atoi(nptr) == 2147483649)
         return 1;
 
 	else if (*nptr == '+' || *nptr == '-')
