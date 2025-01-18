@@ -13,6 +13,15 @@ typedef struct list
     struct list *next;
 }t_list;
 
+// my data
+typedef struct sort
+{
+    int len;
+    int *arr;
+    int index;
+    int range;
+}d_sort;
+
 // all prototype
 
 void ft_free_stack(t_list **stack);
@@ -47,5 +56,7 @@ void    ft_sort_2nbr(t_list **list);
 int     ft_find_position(int target, t_list *lst);
 void    ft_find_min_push_b(t_list **stack_a, t_list **stack_b);
 void    ft_full_sort(t_list **stack_a, t_list **stack_b);
+void    ft_sort_stack(t_list **stack_a, t_list **stack_b);
+void	ft_insertion_sort(int *str, int len);
 
 #endif

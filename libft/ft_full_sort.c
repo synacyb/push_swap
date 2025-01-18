@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:56:52 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/13 12:03:18 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/18 14:47:05 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	ft_full_sort(t_list **stack_a, t_list **stack_b)
 				ft_push_a(stack_a, stack_b);
 		}
 	}
+	else
+		ft_sort_stack(stack_a, stack_b);
 }
