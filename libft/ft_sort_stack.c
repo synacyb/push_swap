@@ -6,13 +6,13 @@ int	get_range(t_list *stack)
 
 	len = ft_lstsize(stack);
 	if (len <= 16)
-		return (3);
+		return (len / 2);
 	else if(len <= 100)
-		return (13);
+		return (len / 5);
 	else if (len <= 500)
-		return (30);
+		return (len / 12);
 	else
-		return (45);
+		return (len / (len / 2));
 }
 int	*creat_arr(t_list *list)
 {
@@ -38,23 +38,6 @@ void	ft_check_stack_b(t_list **stack_b)
 		if ((*stack_b)->content < (*stack_b)->next->content)
 			ft_swap_b(*stack_b);
 	}
-}
-
-void	ft_sort2(t_list **list)
-{
-	d_sort sort2;
-	sort2.index = 0;
-	t_list *tmp = *list;
-
-	while ((tmp)->next && (tmp)->content > (tmp)->next->content)
-	{
-		sort2.index++;
-		tmp = tmp->next;
-	}
-	if (sort2.index > ft_lstsize(*list) / 2)
-		ft_reverse_rotate_a(list);
-	else
-		ft_rotate_a(list);
 }
 
 void    ft_sort_stack(t_list **stack_a, t_list **stack_b)
@@ -86,6 +69,6 @@ void    ft_sort_stack(t_list **stack_a, t_list **stack_b)
 			my_data.index++;
 		}
 		else
-			ft_sort2(stack_a);
+			ft_rotate_a(stack_a);
 	}
 }

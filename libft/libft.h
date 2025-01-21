@@ -58,5 +58,6 @@ void    ft_find_min_push_b(t_list **stack_a, t_list **stack_b);
 void    ft_full_sort(t_list **stack_a, t_list **stack_b);
 void    ft_sort_stack(t_list **stack_a, t_list **stack_b);
 void	ft_insertion_sort(int *str, int len);
+void    ft_last_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

@@ -70,7 +70,8 @@ int main(int arc, char **argv)
 		 	i++;
 		}
 		ft_full_sort(&stack_a, &stack_b);
-		ft_print_list(stack_a);
+		ft_last_sort(&stack_a, &stack_b);
+		//ft_print_list(stack_a);
 		i = i - 1;
 		while (i >= 0)
 		{
