@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:45:35 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/23 10:48:05 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/23 11:30:26 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 			&& (*stack_a)->content <= my_data.arr[(my_data.range)
 				+ (my_data.index)])
 		{
-			ft_push_b(stack_a, stack_b);
-			ft_check_stack_b(stack_b);
+			(ft_push_b(stack_a, stack_b), ft_check_stack_b(stack_b));
 			my_data.index++;
 		}
 		else if ((*stack_a)->content < my_data.arr[my_data.index])
@@ -90,4 +89,5 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 		else
 			ft_rotate_a(stack_a);
 	}
+	free(my_data.arr);
 }

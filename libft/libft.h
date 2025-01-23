@@ -54,7 +54,7 @@ int	    ft_lstsize(t_list *lst);
 void    ft_sort_list(t_list **list);
 void    ft_sort_2nbr(t_list **list);
 int     ft_find_position(int target, t_list *lst);
-void    ft_find_min_push_b(t_list **stack_a, t_list **stack_b);
+void    find_pb(t_list **stack_a, t_list **stack_b);
 void    ft_full_sort(t_list **stack_a, t_list **stack_b);
 void    ft_sort_stack(t_list **stack_a, t_list **stack_b);
 void	ft_insertion_sort(int *str, int len);
