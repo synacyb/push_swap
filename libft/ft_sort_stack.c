@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:45:35 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/23 11:30:26 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:02:32 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	get_range(t_list *stack)
 
 int	*creat_arr(t_list *list)
 {
-	d_sort	my_arr;
+	t_sort	my_arr;
 
 	my_arr.len = ft_lstsize(list);
 	my_arr.arr = malloc(my_arr.len * sizeof(int));
@@ -54,7 +54,7 @@ void	ft_check_stack_b(t_list **stack_b)
 	}
 }
 
-void	helper(d_sort *my_data, t_list **stack_a)
+void	helper(t_sort *my_data, t_list **stack_a)
 {
 	my_data->range = get_range(*stack_a);
 	my_data->arr = creat_arr(*stack_a);
@@ -65,7 +65,7 @@ void	helper(d_sort *my_data, t_list **stack_a)
 
 void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 {
-	d_sort	my_data;
+	t_sort	my_data;
 
 	helper(&my_data, stack_a);
 	while (*stack_a)

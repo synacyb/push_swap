@@ -71,7 +71,7 @@ int main(int arc, char **argv)
 		}
 		ft_full_sort(&stack_a, &stack_b);
 		ft_last_sort(&stack_a, &stack_b);
-		ft_print_list(stack_a);
+		// ft_print_list(stack_a);
 		ft_free_stack(&stack_a);
 		i = i - 1;
 		while (i >= 0)

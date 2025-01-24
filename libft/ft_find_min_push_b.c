@@ -6,13 +6,13 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:56:00 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/23 11:25:40 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:47:08 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    find_pb(t_list **stack_a, t_list **stack_b)
+void	find_pb(t_list **stack_a, t_list **stack_b)
 {
 	int	min;
 	int	size;
