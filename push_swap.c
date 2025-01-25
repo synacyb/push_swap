@@ -1,7 +1,7 @@
 #include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
 
-static int	ft_has_duplicates(char **arr)
+int	ft_has_duplicates(char **arr)
 {
 	int	i;
 	int	j;
@@ -21,7 +21,7 @@ static int	ft_has_duplicates(char **arr)
 	return (0);
 }
 
-int check_argument(char **argv)
+int check_argument(char **argv, char *arr)
 {
 	int i = 0;
 
@@ -30,6 +30,7 @@ int check_argument(char **argv)
 		if (ft_valid_arguments(argv[i]))
 		{
 			write(2, "Error\n", 6);
+			free_args(argv, arr);
 			exit(1);
 		}
 		i++;
@@ -37,6 +38,7 @@ int check_argument(char **argv)
 	if (ft_has_duplicates(argv))
 	{
 			write(2, "Error\n", 6);
+			free_args(argv, arr);
 			exit(1);
 	}
 	return 0;
@@ -58,7 +60,7 @@ int main(int arc, char **argv)
 		i = 0;
 		arr = ft_join_args(argv);
 		argv = ft_split(arr, ' ');
-		check_argument(argv);
+		check_argument(argv, arr);
 		while (argv[i])
 		{
 		 	number = ft_atoi(argv[i]);
