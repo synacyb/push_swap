@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:58:53 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/25 09:29:26 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/25 18:59:09 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b);
 void	ft_insertion_sort(int *str, int len);
 void	ft_last_sort(t_list **stack_a, t_list **stack_b);
 void	free_args(char **av, char *arr);
+int		is_sorted(t_list *list);
 #endif

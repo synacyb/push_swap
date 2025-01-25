@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:34:08 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/25 13:36:41 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/25 19:12:15 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	creat_linked_list(char **av, t_list **stack, t_list **actual_node)
 
 int	main(int arc, char **argv)
 {
-	int		number;
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*arr;
@@ -93,8 +92,11 @@ int	main(int arc, char **argv)
 		argv = ft_split(arr, ' ');
 		check_argument(argv, arr);
 		creat_linked_list(argv, &stack_a, &actual_node);
-		ft_full_sort(&stack_a, &stack_b);
-		ft_last_sort(&stack_a, &stack_b);
+		if (is_sorted(stack_a))
+		{
+			ft_full_sort(&stack_a, &stack_b);
+			ft_last_sort(&stack_a, &stack_b);
+		}
 		ft_free_stack(&stack_a);
 		free_args(argv, arr);
 	}

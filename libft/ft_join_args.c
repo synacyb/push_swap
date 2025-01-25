@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 09:58:34 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/24 10:07:12 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/25 19:11:17 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	check_empty(char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	size_t	j;
 
 	i = 1;
 	while (av[i])
