@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/25 13:34:08 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/01/25 13:36:41 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
 
@@ -21,10 +33,11 @@ int	ft_has_duplicates(char **arr)
 	return (0);
 }
 
-int check_argument(char **argv, char *arr)
+int	check_argument(char **argv, char *arr)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (argv[i])
 	{
 		if (ft_valid_arguments(argv[i]))
@@ -37,48 +50,52 @@ int check_argument(char **argv, char *arr)
 	}
 	if (ft_has_duplicates(argv))
 	{
-			write(2, "Error\n", 6);
-			free_args(argv, arr);
-			exit(1);
+		write(2, "Error\n", 6);
+		free_args(argv, arr);
+		exit(1);
 	}
-	return 0;
+	return (0);
 }
 
-int main(int arc, char **argv)
+void	creat_linked_list(char **av, t_list **stack, t_list **actual_node)
 {
+	int	i;
+	int	number;
+
+	i = 0;
+	number = 0;
+	while (av[i])
+	{
+		number = ft_atoi(av[i]);
+		*actual_node = creat_node(number);
+		if (!stack)
+			stack = actual_node;
+		else
+			ft_lstadd_back(stack, *actual_node);
+		i++;
+	}
+}
+
+int	main(int arc, char **argv)
+{
+	int		number;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	char	*arr;
+	t_list	*actual_node;
+
 	if (arc > 1)
 	{
-		int i;
-		int number;
-		t_list	*stack_a;
-		t_list	*stack_b;
-		char *arr;
-
-		t_list	*actual_node = NULL;
+		actual_node = NULL;
 		stack_a = NULL;
 		stack_b = NULL;
-		i = 0;
 		arr = ft_join_args(argv);
 		argv = ft_split(arr, ' ');
 		check_argument(argv, arr);
-		while (argv[i])
-		{
-		 	number = ft_atoi(argv[i]);
-		 	actual_node = creat_node(number);
-		 	if (!stack_a)
-		 		stack_a = actual_node;
-		 	else
-		 		ft_lstadd_back(&stack_a, actual_node);
-		 	i++;
-		}
+		creat_linked_list(argv, &stack_a, &actual_node);
 		ft_full_sort(&stack_a, &stack_b);
 		ft_last_sort(&stack_a, &stack_b);
-		// ft_print_list(stack_a);
 		ft_free_stack(&stack_a);
-		i = i - 1;
-		while (i >= 0)
-			free(argv[i--]);
-		free(argv);
-		free(arr);
+		free_args(argv, arr);
 	}
 }
