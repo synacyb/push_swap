@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:45:35 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/24 11:02:32 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/25 11:31:29 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	get_range(t_list *stack)
 	else if (len <= 500)
 		return (len / 12);
 	else
-		return (len / (len / 2));
+		return (len / (len / 20));
 }
 
 int	*creat_arr(t_list *list)

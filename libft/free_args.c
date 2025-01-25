@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_args.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/25 11:35:23 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/01/25 11:36:33 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    free_args(char **av, char *arr)
+void	free_args(char **av, char *arr)
 {
-    int i = 0;
-    while(av[i])
-        i++;
-    i = i - 1;
-    while (i >= 0)
-			free(av[i--]);
-    free(av);
-    free(arr);
+	int	i;
+
+	i = 0;
+	while (av[i])
+		i++;
+	i = i - 1;
+	while (i >= 0)
+		free(av[i--]);
+	free(av);
+	free(arr);
 }
