@@ -129,12 +129,13 @@ int main(int arc, char **argv)
 		stack_a = NULL;
 		stack_b = NULL;
 		arr = ft_join_args_bns(argv);
-		
 		argv = ft_split(arr, ' ');
 		check_argument(argv, arr);
 		creat_linked_list(argv, &stack_a, &actual_node);
 		take_istcraction(&stack_a, &stack_b);
 		ft_free_stack(&stack_a);
+		if (stack_b)
+			ft_free_stack(&stack_b);
 		free_args(argv, arr);
 	}
     return (0);
