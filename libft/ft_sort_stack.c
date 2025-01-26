@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:45:35 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/25 11:31:29 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:26:36 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_check_stack_b(t_list **stack_b)
 	if (ft_lstsize(*stack_b) >= 2)
 	{
 		if ((*stack_b)->content < (*stack_b)->next->content)
-			ft_swap_b(*stack_b);
+			ft_swap_b(*stack_b, 1);
 	}
 }
 
@@ -76,18 +76,18 @@ void	ft_sort_stack(t_list **stack_a, t_list **stack_b)
 			&& (*stack_a)->content <= my_data.arr[(my_data.range)
 				+ (my_data.index)])
 		{
-			(ft_push_b(stack_a, stack_b), ft_check_stack_b(stack_b));
+			(ft_push_b(stack_a, stack_b, 1), ft_check_stack_b(stack_b));
 			my_data.index++;
 		}
 		else if ((*stack_a)->content < my_data.arr[my_data.index])
 		{
-			ft_push_b(stack_a, stack_b);
+			ft_push_b(stack_a, stack_b, 1);
 			if (*stack_b && (*stack_b)->next)
-				ft_rotate_b(stack_b);
+				ft_rotate_b(stack_b, 1);
 			my_data.index++;
 		}
 		else
-			ft_rotate_a(stack_a);
+			ft_rotate_a(stack_a, 1);
 	}
 	free(my_data.arr);
 }

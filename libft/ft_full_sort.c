@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:56:52 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/23 11:26:25 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:26:24 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	num_node_4_5(t_list **stack_a, t_list **stack_b, int num_node)
 		(find_pb(stack_a, stack_b), find_pb(stack_a, stack_b));
 		ft_sort_list(stack_a);
 		while (*stack_b)
-			ft_push_a(stack_a, stack_b);
+			ft_push_a(stack_a, stack_b, 1);
 	}
 	if (num_node == 4)
 	{
 		(find_pb(stack_a, stack_b), ft_sort_list(stack_a));
 		while (*stack_b)
-			ft_push_a(stack_a, stack_b);
+			ft_push_a(stack_a, stack_b, 1);
 	}
 }
 

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_a.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 10:15:29 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/26 15:24:44 by ayadouay         ###   ########.fr       */
+/*   Created: 2024/11/08 10:35:48 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/01/26 14:55:54 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "../ft_printf/ft_printf.h"
 
-void	ft_push_a(t_list **stack_a, t_list **stack_b, int flag)
+int	ft_strcmp(const char *str1, const char *str2)
 {
-	t_list	*tmp;
-
-	if (!(*stack_b))
-		return ;
-	tmp = (*stack_b);
-	*stack_b = (*stack_b)->next;
-	tmp->next = (*stack_a);
-	*stack_a = tmp;
-	if(flag == 1)
-		ft_printf("pa\n");
+	while (*str1 != '\0' || *str2 != '\0')
+	{
+		if (*str1 != *str2)
+			return ((unsigned char)*str1 - (unsigned char)*str2);
+		str1++;
+		str2++;
+	}
+	return (0);
 }

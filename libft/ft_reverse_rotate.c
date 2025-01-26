@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:19:20 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/24 10:28:46 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:22:03 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ void	ft_reverse_rotate(t_list **stack)
 	ft_lstadd_front(stack, last_node);
 }
 
-void	ft_reverse_rotate_a(t_list **stack_a)
+void	ft_reverse_rotate_a(t_list **stack_a, int flag)
 {
 	ft_reverse_rotate(stack_a);
-	ft_printf("rra\n");
+	if(flag == 1)
+		ft_printf("rra\n");
 }
 
-void	ft_reverse_rotate_b(t_list **stack_b)
+void	ft_reverse_rotate_b(t_list **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_b);
-	ft_printf("rrb\n");
+	if(flag == 1)
+		ft_printf("rrb\n");
 }
 
-void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
+void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	ft_printf("rrr\n");
+	if(flag == 1)
+		ft_printf("rrr\n");
 }

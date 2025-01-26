@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:47:47 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/13 11:47:48 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:13:26 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_sort_2nbr(t_list **list)
 	if (pos == 2)
 	{
 		if ((*list)->content > (*list)->next->content)
-			ft_swap_a(*list);
+			ft_swap_a(*list, 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:58:53 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/25 18:59:09 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:25:45 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,21 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_print_list(t_list *list);
-void	ft_swap_a(t_list *list);
-void	ft_swap_b(t_list *list);
-void	ft_swap_a_b(t_list *list1, t_list *list2);
-void	ft_push_a(t_list **stack_a, t_list **stack_b);
-void	ft_push_b(t_list **stack_a, t_list **stack_b);
-void	ft_rotate_a(t_list **stack_a);
-void	ft_rotate_b(t_list **stack_b);
-void	ft_reverse_rotate_a(t_list **stack_a);
-void	ft_reverse_rotate_b(t_list **stack_b);
-void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
+void	ft_swap_a(t_list *list, int flag);
+void	ft_swap_b(t_list *list, int flag);
+void	ft_swap_a_b(t_list *list1, t_list *list2, int flag);
+void	ft_push_a(t_list **stack_a, t_list **stack_b, int flag);
+void	ft_push_b(t_list **stack_a, t_list **stack_b, int flag);
+void	ft_rotate_a(t_list **stack_a, int flag);
+void	ft_rotate_b(t_list **stack_b, int flag);
+void	ft_rotate_a_b(t_list **stack_a, t_list **stack_b, int flag);
+void	ft_reverse_rotate_a(t_list **stack_a, int flag);
+void	ft_reverse_rotate_b(t_list **stack_b, int flag);
+void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, int flag);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *str1, const char *str2);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);

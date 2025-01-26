@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:10:47 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/24 10:11:21 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:30:19 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ void	ft_last_sort(t_list **stack_a, t_list **stack_b)
 		if (max_pos <= len / 2)
 		{
 			while ((*stack_b)->content != max_value)
-				ft_rotate_b(stack_b);
+				ft_rotate_b(stack_b, 1);
 		}
 		else if (max_pos > len / 2)
 		{
 			while ((*stack_b)->content != max_value)
-				ft_reverse_rotate_b(stack_b);
+				ft_reverse_rotate_b(stack_b, 1);
 		}
-		ft_push_a(stack_a, stack_b);
+		ft_push_a(stack_a, stack_b, 1);
 	}
 }
