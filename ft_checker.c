@@ -2,11 +2,16 @@
 #include "get_next_line.h"
 
 
+int display_error()
+{
+	write(2, "Error\n", 6);
+	return(1);
+}
+
 int    use_instraction(char *str, t_list **stack_a, t_list **stack_b)
 {
 	if (ft_strcmp(str, "sa\n") == 0)
 		ft_swap_a(*stack_a, 0);
-		
 	else if(ft_strcmp(str, "sb\n") == 0)
 		ft_swap_b(*stack_b, 0);
 	else if(ft_strcmp(str, "ss\n") == 0)
@@ -28,10 +33,7 @@ int    use_instraction(char *str, t_list **stack_a, t_list **stack_b)
 	else if(ft_strcmp(str, "rrr\n") == 0)
 		ft_reverse_rotate_a_b(stack_a, stack_b, 0);
 	else
-	{
-		write(2, "Error\n", 6);
-		return 1;
-	}
+		return (display_error());
 	return 0;
 }
 void    take_istcraction(t_list **stack_a, t_list **stack_b)
