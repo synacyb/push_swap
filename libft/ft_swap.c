@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:48:38 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/26 15:08:40 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:48:33 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	ft_swap(t_list *list)
 void	ft_swap_a(t_list *list, int flag)
 {
 	ft_swap(list);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("sa\n");
 }
 
 void	ft_swap_b(t_list *list, int flag)
 {
 	ft_swap(list);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("sb\n");
 }
 
@@ -46,6 +46,6 @@ void	ft_swap_a_b(t_list *list1, t_list *list2, int flag)
 {
 	ft_swap(list1);
 	ft_swap(list2);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("ss\n");
 }

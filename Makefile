@@ -19,6 +19,7 @@ BONUS = 	ft_checker.c get_next_line.c \
 			libft/ft_substr.c libft/ft_strjoin.c libft/ft_reverse_rotate.c libft/ft_lstlast.c libft/ft_lstadd_front.c libft/ft_min_value.c \
 			libft/ft_join_args.c libft/ft_find_position.c libft/ft_sort_list.c libft/ft_lstsize.c libft/ft_find_min_push_b.c libft/ft_2rndom_nbr.c libft/ft_full_sort.c \
 			libft/ft_insertion_sort.c libft/ft_sort_stack.c libft/ft_last_sort.c libft/free_args.c libft/is_sorted.c get_next_line_utils.c \
+			check_arguments.c creat_linked_list.c ft_has_duplicates_bns.c\
 
 		
 

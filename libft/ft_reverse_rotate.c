@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:19:20 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/26 15:22:03 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:49:19 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	ft_reverse_rotate(t_list **stack)
 void	ft_reverse_rotate_a(t_list **stack_a, int flag)
 {
 	ft_reverse_rotate(stack_a);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("rra\n");
 }
 
 void	ft_reverse_rotate_b(t_list **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_b);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("rrb\n");
 }
 
@@ -46,6 +46,6 @@ void	ft_reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	if(flag == 1)
+	if (flag == 1)
 		ft_printf("rrr\n");
 }

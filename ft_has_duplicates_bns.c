@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_b.c                                        :+:      :+:    :+:   */
+/*   ft_has_duplicates_bns.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 10:18:23 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/27 11:49:09 by ayadouay         ###   ########.fr       */
+/*   Created: 2025/01/27 12:07:13 by ayadouay          #+#    #+#             */
+/*   Updated: 2025/01/27 12:12:08 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "../ft_printf/ft_printf.h"
+#include "get_next_line.h"
 
-void	ft_push_b(t_list **stack_a, t_list **stack_b, int flag)
+int	ft_has_duplicates_bns(char **arr)
 {
-	t_list	*tmp;
+	int	i;
+	int	j;
 
-	if (!(*stack_a))
-		return ;
-	tmp = (*stack_a);
-	*stack_a = (*stack_a)->next;
-	tmp->next = (*stack_b);
-	*stack_b = tmp;
-	if (flag == 1)
-		ft_printf("pb\n");
+	i = 0;
+	while (arr[i])
+	{
+		j = i + 1;
+		while (arr[j])
+		{
+			if (ft_atoi(arr[i]) == ft_atoi(arr[j]))
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
