@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ./libft/ft_atoi.c ./libft/ft_creat_node.c ./libft/ft_lstadd_back.c ./libft/ft_print_list.c libft/ft_swap.c\
 			ft_printf/ft_putnbr_fd.c ft_printf/ft_putstr_fd.c ft_printf/ft_printf.c ft_printf/ft_putchar_fd.c \
@@ -34,13 +34,13 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-# %.o: %.c
-# 	$(CC) $(CFLAGS) -c $< -o $@
-
 bonus: $(BONUS_NAME)
 
 $(BONUS_NAME): $(BOBJS)
 	$(CC) $(CFLAGS) $(BOBJS) -o $(BONUS_NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(DELETE) $(OBJS) $(BOBJS)

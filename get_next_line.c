@@ -6,40 +6,11 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 14:42:52 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/26 14:39:45 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:28:26 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	char	*src;
-// 	size_t	i;
-// 	char	*str;
-
-// 	if (s == NULL)
-// 		return (NULL);
-// 	if (start >= ft_strlen(s))
-// 		return (ft_strdup(""));
-// 	if (len + start > ft_strlen(s))
-// 		len = ft_strlen(s) - start;
-// 	src = (char *)s + start;
-// 	i = 0;
-// 	str = malloc((len + 1) * sizeof(char));
-// 	if (!str)
-// 		return (NULL);
-// 	while (i < len)
-// 	{
-// 		*str = *src;
-// 		str++;
-// 		src++;
-// 		i++;
-// 	}
-// 	*str = '\0';
-// 	str = str - i;
-// 	return (str);
-// }
 
 char	*find_line(int fd, char *str, char *buffer)
 {
