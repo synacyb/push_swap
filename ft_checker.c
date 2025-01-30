@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:06:48 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/28 15:58:07 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:35:29 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	take_istcraction(t_list **stack_a, t_list **stack_b)
 		if (check == 1)
 			return ;
 	}
-	if (is_sorted(*stack_a) == 0)
+	if (is_sorted(*stack_a) == 0 && !ft_lstsize(*stack_b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 19:07:20 by ayadouay          #+#    #+#             */
-/*   Updated: 2025/01/28 09:11:18 by ayadouay         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:37:00 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	is_sorted(t_list *list)
 	int	first;
 	int	second;
 
+	if (!list)
+		return (1);
 	while (list->next)
 	{
 		first = list->content;
